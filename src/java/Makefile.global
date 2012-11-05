@@ -1,0 +1,49 @@
+#-------------------------------------------------------------------------
+# Copyright (c) 2004, 2005, 2006 TADA AB - Taby Sweden
+# Copyright (c) 2010, 2011 PostgreSQL Global Development Group
+#
+# Distributed under the terms shown in the file COPYRIGHT
+# found in the root folder of this project or at
+# http://wiki.tada.se/index.php?title=PLJava_License
+#
+# @author Thomas Hallgren
+#-------------------------------------------------------------------------
+SRCDIR		:= $(MODULEROOT)/$(NAME)
+SRCS		:= $(shell find $(SRCDIR) -name CVS -prune -o -type f -name \*.java -print)
+CLASSES		:= $(shell find . -type f -name \*.class)
+JAR			:= jar
+JAVADOC		:= javadoc
+JAVAFLAGS += $(findstring -g,$(shell ${PG_CONFIG} --cflags))
+
+ifdef USE_GCJ
+	GCJ	:= gcj
+	JAVAC	:= $(GCJ) -C
+else
+	JAVAC	:= javac -source 1.6 -target 1.6
+endif
+
+JARFILE	:= $(TARGETDIR)/$(NAME).jar
+
+.timestamp: $(SRCS)
+	@echo $(JAVAC) -d . $(JAVAFLAGS) '<java sources>'
+	@$(JAVAC) -d . $(JAVAFLAGS) $(SRCS)
+	@touch $@
+
+.PHONY: javadoc
+
+$(TARGETDIR)/docs/COPYRIGHT.txt: $(PROJDIR)/COPYRIGHT
+	@-mkdir -p $(@D)
+	@cp $(PROJDIR)/COPYRIGHT $(TARGETDIR)/docs/COPYRIGHT.txt
+
+javadoc: $(TARGETDIR)/docs/$(NAME)/.timestamp
+
+$(TARGETDIR)/docs/$(NAME)/.timestamp: $(SRCS)
+	$(JAVADOC) -d $(TARGETDIR)/docs/$(NAME)	\
+		-sourcepath $(SRCDIR)				\
+		-subpackages org.postgresql.pljava	\
+		-breakiterator						\
+		-doctitle $(JAVADOCTITLE) 			\
+		-protected 							\
+		-bottom 'Copyright (c) 2003, 2004, 2005 TADA AB - Taby Sweden. \
+			Distributed under the terms shown in <a href="../COPYRIGHT.txt">COPYRIGHT</a>'
+	@touch $(TARGETDIR)/docs/$(NAME)/.timestamp
