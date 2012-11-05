@@ -23,7 +23,6 @@ public class ELogFormatter extends Formatter {
 
     private final static MessageFormat s_tsFormatter   = new MessageFormat(
                                                                            "{0,date,dd MMM yy} {0,time,HH:mm:ss} {1} {2}");
-
     private final Date                 m_timestamp     = new Date();
     private final Object               m_args[]        = new Object[] {
             m_timestamp, null, null                   };

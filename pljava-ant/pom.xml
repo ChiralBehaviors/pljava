@@ -6,12 +6,14 @@
 		<artifactId>pljava.app</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>pljava-jdbc</artifactId>
+	<artifactId>pljava-ant</artifactId>
+	<name>pl/java ant</name>
+	<description>Ant tasks for pl/java</description>
 	<dependencies>
-        <dependency>
-            <groupId>com.hellblazer</groupId>
-            <artifactId>pljava-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+		<dependency>
+			<groupId>ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>1.7.0</version>
+		</dependency>
 	</dependencies>
 </project>

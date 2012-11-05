@@ -6,12 +6,7 @@
 		<artifactId>pljava.app</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>pljava-jdbc</artifactId>
-	<dependencies>
-        <dependency>
-            <groupId>com.hellblazer</groupId>
-            <artifactId>pljava-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-	</dependencies>
+	<artifactId>pljava-api</artifactId>
+	<name>pl/java API</name>
+	<description>The api for java stored procedures</description>
 </project>
