@@ -313,7 +313,7 @@ public class SPIStatement implements Statement {
     }
 
     public void setMaxFieldSize(int size) throws SQLException {
-        throw new UnsupportedFeatureException("Statement.setMaxFieldSize");
+        // throw new UnsupportedFeatureException("Statement.setMaxFieldSize");
     }
 
     public void setMaxRows(int rows) throws SQLException {
@@ -332,7 +332,7 @@ public class SPIStatement implements Statement {
     // ************************************************************
 
     public void setQueryTimeout(int seconds) throws SQLException {
-        throw new UnsupportedFeatureException("Statement.setQueryTimeout");
+        // throw new UnsupportedFeatureException("Statement.setQueryTimeout");
     }
 
     public <T> T unwrap(Class<T> iface) throws SQLException {

@@ -302,7 +302,7 @@ public class SPIConnection implements Connection {
      *             indicating that this feature is not supported.
      */
     public void clearWarnings() throws SQLException {
-        throw new UnsupportedFeatureException("Connection.clearWarnings");
+        // throw new UnsupportedFeatureException("Connection.clearWarnings");
     }
 
     /**
@@ -318,7 +318,7 @@ public class SPIConnection implements Connection {
      *             indicating that this feature is not supported.
      */
     public void commit() throws SQLException {
-        throw new UnsupportedFeatureException("Connection.commit");
+        // throw new UnsupportedFeatureException("Connection.commit");
     }
 
     public Array createArrayOf(String typeName, Object[] elements)
@@ -847,7 +847,7 @@ public class SPIConnection implements Connection {
      *             indicating that this feature is not supported.
      */
     public void rollback() throws SQLException {
-        throw new UnsupportedFeatureException("Connection.rollback");
+        // throw new UnsupportedFeatureException("Connection.rollback");
     }
 
     public void rollback(Savepoint savepoint) throws SQLException {
@@ -869,7 +869,7 @@ public class SPIConnection implements Connection {
      *             indicating that this feature is not supported.
      */
     public void setAutoCommit(boolean autoCommit) throws SQLException {
-        throw new UnsupportedFeatureException("Connection.setAutoCommit");
+        // throw new UnsupportedFeatureException("Connection.setAutoCommit");
     }
 
     /**
@@ -879,7 +879,7 @@ public class SPIConnection implements Connection {
      *             indicating that this feature is not supported.
      */
     public void setCatalog(String catalog) throws SQLException {
-        throw new UnsupportedFeatureException("Connection.setCatalog");
+        // throw new UnsupportedFeatureException("Connection.setCatalog");
     }
 
     public void setClientInfo(Properties properties)
@@ -913,7 +913,7 @@ public class SPIConnection implements Connection {
      *             indicating that this feature is not supported.
      */
     public void setHoldability(int holdability) throws SQLException {
-        throw new UnsupportedFeatureException("Connection.setHoldability");
+        // throw new UnsupportedFeatureException("Connection.setHoldability");
     }
 
     /* (non-Javadoc)
@@ -933,7 +933,7 @@ public class SPIConnection implements Connection {
      *             indicating that this feature is not supported.
      */
     public void setReadOnly(boolean readOnly) throws SQLException {
-        throw new UnsupportedFeatureException("Connection.setReadOnly");
+        // throw new UnsupportedFeatureException("Connection.setReadOnly");
     }
 
     public Savepoint setSavepoint() throws SQLException {
@@ -959,8 +959,7 @@ public class SPIConnection implements Connection {
      *             indicating that this feature is not supported.
      */
     public void setTransactionIsolation(int level) throws SQLException {
-        throw new UnsupportedFeatureException(
-                                              "Connection.setTransactionIsolation");
+        // throw new UnsupportedFeatureException("Connection.setTransactionIsolation");
     }
 
     /**
