@@ -9,4 +9,18 @@
 	<artifactId>pljava-api</artifactId>
 	<name>pl/java API</name>
 	<description>The api for java stored procedures</description>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

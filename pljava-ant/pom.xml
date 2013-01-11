@@ -11,7 +11,7 @@
 	<description>Ant tasks for pl/java</description>
 	<dependencies>
 		<dependency>
-			<groupId>ant</groupId>
+			<groupId>org.apache.ant</groupId>
 			<artifactId>ant</artifactId>
 			<version>1.7.0</version>
 		</dependency>
